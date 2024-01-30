@@ -13,6 +13,7 @@ namespace ImportExcelFile.Services
             _context = context;
         }
 
+
         public MemoryStream LerStream(IFormFile formFile)
         {
             using (var stream = new MemoryStream())
@@ -24,11 +25,11 @@ namespace ImportExcelFile.Services
             }
         }
 
-        public List<ProdutoModel> LerXls(MemoryStream stream)
+        public List<ImportExcelFileTableModel> LerXls(MemoryStream stream)
         {
             try
             {
-                var resposta = new List<ProdutoModel>();
+                var resposta = new List<ImportExcelFileTableModel>();
 
                 ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
 
@@ -39,7 +40,7 @@ namespace ImportExcelFile.Services
 
                     for(int linha = 2; linha <= NumeroLinhas; linha++)
                     {
-                        var produto = new ProdutoModel();
+                        var produto = new ImportExcelFileTableModel();
 
                         if (worksheet.Cells[linha, 1].Value != null && worksheet.Cells[linha, 4].Value != null)
                         {
@@ -66,7 +67,7 @@ namespace ImportExcelFile.Services
             }
         }
 
-        public  void SalvarDados(List<ProdutoModel> produtos)
+        public  void SalvarDados(List<ImportExcelFileTableModel> produtos)
         {
             try
             {

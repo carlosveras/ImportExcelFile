@@ -11,7 +11,7 @@ namespace ImportExcelFile.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Produtos",
+                name: "ImportExcelFileTable",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -23,7 +23,7 @@ namespace ImportExcelFile.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Produtos", x => x.Id);
+                    table.PrimaryKey("PK_ImportExcelFileTable", x => x.Id);
                 });
         }
 
@@ -31,7 +31,7 @@ namespace ImportExcelFile.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Produtos");
+                name: "ImportExcelFileTable");
         }
     }
 }

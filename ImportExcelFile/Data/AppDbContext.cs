@@ -9,7 +9,7 @@ namespace ImportExcelFile.Data
         {
         }
 
-        public DbSet<ProdutoModel> Produtos {  get; set; }
+        public DbSet<ImportExcelFileTableModel> ImportExcelFileTable {  get; set; }
 
     }
 }

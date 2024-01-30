@@ -18,7 +18,7 @@ namespace ImportExcelFile.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var produtos = await _context.Produtos.ToListAsync();
+            var produtos = await _context.ImportExcelFileTable.ToListAsync();
             return View(produtos);
         }
 
